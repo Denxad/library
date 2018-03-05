@@ -3,3 +3,28 @@
     clear: right;
     width: 45px;
 }
+
+.btn-table {
+    width: 40px;
+    display: inline;
+}
+
+.table-buttons {
+    width: 86px;
+}
+
+.model-details {
+    display: grid;
+}
+
+.model-details span {
+    margin-bottom: 20px;
+}
+
+.update-form {
+    width: 30%;
+}
+
+.update-form button {
+    width: 200px;
+}

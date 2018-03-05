@@ -26,6 +26,9 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     @show
+
+    @yield('css')
+
 </head>
 <body class="hold-transition skin-purple fixed">
 <div class="wrapper">
@@ -62,17 +65,15 @@
 
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">TODO</li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-home"></i> <span>Dashboard</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                <li>
+                    <a href="/home">
+                        <i class="fa fa-home"></i> <span>Home</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../../index.html"><i class="fa fa-circle-notch "></i> Dashboard v1</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-notch "></i> Dashboard v2</a></li>
-                    </ul>
+                </li>
+                <li>
+                    <a href="/clients">
+                        <i class="fa fa-user"></i> <span>Clientes</span>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -90,10 +91,9 @@
 
         <section class="content">
             <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">@yield('box-title')</h3>
+                <div class="box-header no-border header-with-buttons">
                     <div class="box-tools pull-right">
-                        <span class="label label-primary">Label</span>
+                        @yield('buttons-view')
                     </div>
                 </div>
                 <div class="box-body">
@@ -112,6 +112,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
+@yield('scripts')
 </body>
 </html>
 
