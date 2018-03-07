@@ -20,7 +20,7 @@ class ClientsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('loggedin')->except('logout');
+        $this->middleware('loggedin');
     }
 
     public function index() {

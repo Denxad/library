@@ -15,10 +15,10 @@
 Route::get('/', 'Auth\LoginController@index');
 Route::get('/login', 'Auth\LoginController@index');
 Route::post('/login', 'Auth\LoginController@login');
+Route::get('/logout', 'LoginController@logout');
 
 //Home Controller
 Route::get('/home', 'HomeController@index');
-Route::get('/logout', 'HomeController@logout');
 
 //Clients Controller
 Route::get('/clients', 'ClientsController@index');
