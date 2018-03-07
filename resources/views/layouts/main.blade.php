@@ -21,7 +21,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="{{asset("favicon.ico")}}" type="image/x-icon"/>
         <link type="text/css" rel="stylesheet" href="{{asset("css/AdminLTE.min.css")}}"/>
-        <link type="text/css" rel="stylesheet" href="{{asset("css/skin-purple.min.css")}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset("css/skin-blue.min.css")}}"/>
         <link type="text/css" rel="stylesheet" href="{{asset("css/main.css")}}"/>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -30,7 +30,7 @@
     @yield('css')
 
 </head>
-<body class="hold-transition skin-purple fixed">
+<body class="hold-transition skin-blue fixed">
 <div class="wrapper">
 
     <header class="main-header">
