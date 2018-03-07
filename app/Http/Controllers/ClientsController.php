@@ -33,9 +33,10 @@ class ClientsController extends Controller
         $client = Client::find($id);
 
         if(!$client) {
+            //Add Error Message
             return Redirect::to('clients');
         }
-
+        //success message
         return view('clients.view')->with('client', $client);
     }
 
@@ -49,10 +50,10 @@ class ClientsController extends Controller
         $client->name = $request->name;
         $client->telefone = $request->telefone;
         $client->telemovel = $request->telemovel;
-        $client->saldo = $request->saldo;
+        $client->debt = $request->debt;
 
         $client->save();
-
+        //success message
         return Redirect::to('client/' . $client->id);
     }
 
@@ -60,6 +61,7 @@ class ClientsController extends Controller
         $client = Client::find($id);
 
         if(!$client) {
+            //Add Error Message
             return Redirect::to('clients');
         }
 
@@ -70,14 +72,20 @@ class ClientsController extends Controller
         $client->name = $request->name;
         $client->telefone = $request->telefone;
         $client->telemovel = $request->telemovel;
-        $client->saldo = $request->saldo;
+        $client->debt = $request->debt;
 
         $client->save();
-
+        //success message
         return Redirect::to('client/' . $client->id);
     }
 
-    public function remove(int $id) {
-        //TODO
+    public function delete(int $id) {
+        if (!Client::destroy($id)) {
+            //Add Error Message
+            return Redirect::to('/clients');
+        }
+
+        //success message
+        return Redirect::to('/clients');
     }
 }

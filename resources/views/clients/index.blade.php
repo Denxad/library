@@ -15,7 +15,7 @@
             <th>Nome</th>
             <th>Telemovel</th>
             <th>Telefone</th>
-            <th>Saldo</th>
+            <th>Dívida</th>
             <th></th>
         </tr>
         </thead>
@@ -25,7 +25,7 @@
                     <td>{{$client->name}}</td>
                     <td>{{$client->telemovel}}</td>
                     <td>{{$client->telefone}}</td>
-                    <td>{{$client->saldo}} €</td>
+                    <td>{{$client->debt}} €</td>
                     <td class="table-buttons">
                         <a href="/client/{{$client->id}}" class="btn btn-block btn-success btn-table"><i class="fas fa-eye"></i></a>
                         <a href="/client/update/{{$client->id}}" class="btn btn-block btn-warning btn-table"><i class="fas fa-pencil-alt"></i></a>

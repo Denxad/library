@@ -22,13 +22,11 @@ Route::get('/logout', 'HomeController@logout');
 
 //Clients Controller
 Route::get('/clients', 'ClientsController@index');
-
 Route::get('/client/create', 'ClientsController@create');
 Route::post('/client/create', 'ClientsController@create');
-
 Route::get('/client/{id}', 'ClientsController@view');
-
 Route::get('/client/update/{id}', 'ClientsController@update');
 Route::post('/client/update/{id}', 'ClientsController@update');
+Route::get('/client/delete/{id}', 'ClientsController@delete');
 
 //Books Controller

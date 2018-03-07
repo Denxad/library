@@ -18,7 +18,8 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('telefone')->nullable();
             $table->string('telemovel')->nullable();
-            $table->double('saldo', 8, 2)->default(0.00);
+            $table->double('debt', 8, 2)->default(0.00);
+            $table->softDeletes();
         });
     }
 
