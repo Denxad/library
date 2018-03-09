@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Editar - ' . $client->name)
-@section('header', 'Editar cliente')
-@section('small-header', $client->name)
+@section('title', 'Editar - ' . $book->title)
+@section('header', 'Editar livro')
+@section('small-header', $book->title)
 
 @section('content')
     <div class="update-form">
-        {{Form::model($client, ['url' => '/client/update/' . $client->id])}}
-        @include('clients.form')
+        {{Form::model($book, ['url' => '/book/update/' . $book->id])}}
+        @include('books.form')
         {{ Form::close() }}
     </div>
 @stop

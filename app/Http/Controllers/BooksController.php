@@ -70,10 +70,8 @@ class BooksController extends Controller
             return view('books.update')->with('book', $book);
         }
 
-        $book->name = $request->name;
-        $book->telefone = $request->telefone;
-        $book->telemovel = $request->telemovel;
-        $book->debt = $request->debt;
+        $book->title = $request->title;
+        $book->price = $request->price;
 
         $book->save();
         //success message

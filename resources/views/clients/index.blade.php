@@ -1,4 +1,11 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'options' => [
+        'create-books' => [
+            'url' => '/client/create',
+            'text' => 'Adicionar cliente'
+        ]
+    ]
+])
 
 @section('title', 'Livraria - Clientes')
 @section('header', 'Lista de clientes')
@@ -8,12 +15,16 @@
     <link type="text/css" rel="stylesheet" href="{{asset("css/dataTables.bootstrap.min.css")}}"/>
 @stop
 
+@section('header-options')
+    <li><a href="/client/create">Adicionar cliente</a></li>
+@stop
+
 @section('content')
     <table id="table" class="table table-bordered table-hover">
         <thead>
         <tr>
             <th>Nome</th>
-            <th>Telemovel</th>
+            <th>Telemóvel</th>
             <th>Telefone</th>
             <th>Dívida</th>
             <th></th>
@@ -26,9 +37,9 @@
                     <td>{{$client->telemovel}}</td>
                     <td>{{$client->telefone}}</td>
                     <td>{{$client->debt}} €</td>
-                    <td class="table-buttons">
-                        <a href="/client/{{$client->id}}" class="btn btn-block btn-success btn-table"><i class="fas fa-eye"></i></a>
-                        <a href="/client/update/{{$client->id}}" class="btn btn-block btn-warning btn-table"><i class="fas fa-pencil-alt"></i></a>
+                    <td class="btn-group">
+                        <a href="/client/{{$client->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                        <a href="/client/update/{{$client->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
@@ -64,7 +75,10 @@
                         "sNext":     "Seguinte",
                         "sLast":     "Último"
                     }
-                }
+                },
+                "columnDefs": [
+                    { "width": "6.2%", "targets": 4, "orderable": false }
+                ]
             })
         })
     </script>

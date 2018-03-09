@@ -92,6 +92,17 @@
                 @yield('header')
                 <small>@yield('small-header')</small>
             </h1>
+            @if(isset($options))
+                <div class="header-option">
+                    <button type="button" class="btn btn-default" data-toggle="dropdown">Opções
+                        <span class="fa fa-caret-down"></span></button>
+                    <ul id="hermit" class="dropdown-menu">
+                        @foreach($options as $option)
+                            <li><a href="{{ $option['url'] }}">{{ $option['text'] }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </section>
 
         <section class="content">

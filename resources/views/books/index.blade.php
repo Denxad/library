@@ -1,4 +1,11 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'options' => [
+        'create-books' => [
+            'url' => '/book/create',
+            'text' => 'Adicionar livro'
+        ]
+    ]
+])
 
 @section('title', 'Livraria - Livros')
 @section('header', 'Lista de livros')
@@ -12,7 +19,7 @@
     <table id="table" class="table table-bordered table-hover">
         <thead>
         <tr>
-            <th>Titulo</th>
+            <th>Título</th>
             <th>Preço</th>
             <th></th>
         </tr>
@@ -22,9 +29,9 @@
                 <tr>
                     <td>{{$book->title}}</td>
                     <td>{{$book->price}} €</td>
-                    <td class="table-buttons">
-                        <a href="/book/{{$book->id}}" class="btn btn-block btn-success btn-table"><i class="fas fa-eye"></i></a>
-                        <a href="/book/update/{{$book->id}}" class="btn btn-block btn-warning btn-table"><i class="fas fa-pencil-alt"></i></a>
+                    <td class="table-buttons btn-group">
+                        <a href="/book/{{$book->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                        <a href="/book/update/{{$book->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
@@ -38,12 +45,32 @@
     <script>
         $(function () {
             $('table').DataTable({
-                'paging'      : true,
+                'paging': true,
                 'lengthChange': true,
-                'searching'   : true,
-                'ordering'    : true,
-                'info'        : true,
-                'autoWidth'   : false
+                'searching': true,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false,
+                'language': {
+                    "sProcessing":   "A processar...",
+                    "sLengthMenu":   "Mostrar _MENU_ registos",
+                    "sZeroRecords":  "Não foram encontrados resultados",
+                    "sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                    "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registos",
+                    "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                    "sInfoPostFix":  "",
+                    "sSearch":       "Procurar:",
+                    "sUrl":          "",
+                    "oPaginate": {
+                        "sFirst":    "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext":     "Seguinte",
+                        "sLast":     "Último"
+                    }
+                },
+                "columnDefs": [
+                    { "width": "6.2%", "targets": 2, "orderable": false }
+                ]
             })
         })
     </script>

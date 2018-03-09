@@ -16,7 +16,7 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->double('debt', 8, 2)->default(0.00);
+            $table->double('price', 8, 2)->default(0.00);
             $table->softDeletes();
             $table->timestamps();
         });

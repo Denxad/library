@@ -15,8 +15,8 @@
         <div class="box-body">
             <div class="model-details">
                 <span><b>Nome:</b> {{$client->name}}</span>
+                <span><b>Telemóvel:</b> {{$client->telemovel}}</span>
                 <span><b>Telefone:</b> {{$client->telefone}}</span>
-                <span><b>Telemovel:</b> {{$client->telemovel}}</span>
                 <span><b>Dívida:</b> {{$client->debt}} €</span>
             </div>
         </div>

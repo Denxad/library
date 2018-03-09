@@ -4,13 +4,13 @@
 </div>
 
 <div class="form-group">
-    <?= Form::label('telefone', 'Telefone'); ?>
-    <?= Form::text('telefone', null, ['class' => 'form-control'])?>
+    <?= Form::label('telemovel', 'Telemóvel'); ?>
+    <?= Form::text('telemovel', null, ['class' => 'form-control'])?>
 </div>
 
 <div class="form-group">
-    <?= Form::label('telemovel', 'Telemóvel'); ?>
-    <?= Form::text('telemovel', null, ['class' => 'form-control'])?>
+    <?= Form::label('telefone', 'Telefone'); ?>
+    <?= Form::text('telefone', null, ['class' => 'form-control'])?>
 </div>
 
 <div class="form-group">
