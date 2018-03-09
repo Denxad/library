@@ -77,7 +77,7 @@
                 </li>
                 <li>
                     <a href="/books">
-                        <i class="fa fa-user"></i> <span>Livros</span>
+                        <i class="fa fa-book"></i> <span>Livros</span>
                     </a>
                 </li>
             </ul>
