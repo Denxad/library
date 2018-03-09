@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Livraria - Lista de clientes'. $client->name)
+@section('title', 'Livraria - '. $client->name)
 @section('header', 'Detalhes do cliente')
 @section('small-header', $client->name)
 
