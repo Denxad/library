@@ -75,6 +75,11 @@
                         <i class="fa fa-user"></i> <span>Clientes</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/books">
+                        <i class="fa fa-user"></i> <span>Livros</span>
+                    </a>
+                </li>
             </ul>
         </section>
     </aside>

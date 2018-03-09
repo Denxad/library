@@ -30,3 +30,10 @@ Route::post('/client/update/{id}', 'ClientsController@update');
 Route::get('/client/delete/{id}', 'ClientsController@delete');
 
 //Books Controller
+Route::get('/books', 'BooksController@index');
+Route::get('/book/create', 'BooksController@create');
+Route::post('/book/create', 'BooksController@create');
+Route::get('/book/{id}', 'BooksController@view');
+Route::get('/book/update/{id}', 'BooksController@update');
+Route::post('/book/update/{id}', 'BooksController@update');
+Route::get('/book/delete/{id}', 'BooksController@delete');
