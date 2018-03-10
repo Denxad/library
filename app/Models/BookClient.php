@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Client extends Model
+class BookClient extends Model
 {
     use SoftDeletes;
 
@@ -14,13 +14,8 @@ class Client extends Model
      *
      * @var string
      */
-    protected $table = 'clients';
+    protected $table = 'book_client';
     protected $dates = ['deleted_at'];
 
-    public $timestamps = false;
-
-    public function books()
-    {
-        return $this->belongsToMany('App\Models\Book');
-    }
+    public $timestamps = true;
 }

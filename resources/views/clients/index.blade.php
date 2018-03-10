@@ -1,6 +1,6 @@
 @extends('layouts.main', [
     'options' => [
-        'create-books' => [
+        'create-client' => [
             'url' => '/client/create',
             'text' => 'Adicionar cliente'
         ]

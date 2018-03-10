@@ -2,7 +2,7 @@
 
 @section('title', 'Livraria - '. $book->title)
 @section('header', 'Detalhes do livro')
-@section('small-header', $book->title)
+@section('small-header', $book->title . '#' . $book->id)
 
 @section('content')
     <div class="box box-warning">

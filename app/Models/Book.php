@@ -19,5 +19,10 @@ class Book extends Model
 
     public $timestamps = true;
 
+    public function clients()
+    {
+        return $this->belongsToMany('App\Models\Client');
+    }
+
 
 }
