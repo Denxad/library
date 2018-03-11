@@ -26,6 +26,7 @@
             <th>Nome</th>
             <th>Telemóvel</th>
             <th>Telefone</th>
+            <th>Total pago</th>
             <th>Dívida</th>
             <th></th>
         </tr>
@@ -36,10 +37,11 @@
                     <td>{{$client->name}}</td>
                     <td>{{$client->telemovel}}</td>
                     <td>{{$client->telefone}}</td>
+                    <td>{{$client->payment}}</td>
                     <td>{{$client->debt}} €</td>
                     <td class="btn-group">
                         <a href="/client/{{$client->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a href="/client/update/{{$client->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/client/{{$client->id}}/add/book" class="btn btn-warning"><i class="fas fa-plus"></i></a>
                     </td>
                 </tr>
             @endforeach
@@ -77,7 +79,7 @@
                     }
                 },
                 "columnDefs": [
-                    { "width": "6.2%", "targets": 4, "orderable": false }
+                    { "width": "6.2%", "targets": 5, "orderable": false }
                 ]
             })
         })

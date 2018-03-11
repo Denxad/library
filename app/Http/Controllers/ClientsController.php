@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\BookClient;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -87,5 +89,29 @@ class ClientsController extends Controller
 
         //success message
         return Redirect::to('/clients');
+    }
+
+    public function addBook(int $id, Request $request) {
+        $client = Client::find($id);
+
+        if(!$client) {
+            //Add Error Message
+            return Redirect::to('clients');
+        }
+
+        if($request->method() == 'GET') {
+            $books = Book::pluck('title', 'id');
+            return view('clients.addbook', ['books' => $books, 'client' => $client]);
+        }
+
+        $bookClient = new BookClient();
+        $bookClient->client_id = $client->id;
+//        $bookClient->book_id =
+//        $bookClient->price = ;
+
+        if(!$bookClient->save()) {
+            //Add Error Message
+            return Redirect::to('/client/' . $client->id);
+        }
     }
 }

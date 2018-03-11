@@ -30,7 +30,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Livros comprados</h3>
             <div class="box-tools pull-right">
-                <a href="/client/add/book" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
+                <a href="/client/{{$client->id}}/add/book" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
             </div>
         </div>
         <div class="box-body">
