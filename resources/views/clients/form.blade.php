@@ -14,8 +14,8 @@
 </div>
 
 <div class="form-group">
-    <?= Form::label('debt', 'Dívida'); ?>
-    <?= Form::text('debt', null, ['class' => 'form-control'])?>
+    <?= Form::label('payment', 'Dinheiro total pago'); ?>
+    <?= Form::text('payment', null, ['class' => 'form-control'])?>
 </div>
 
 <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Confirmar</button>

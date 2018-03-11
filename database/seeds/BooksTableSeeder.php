@@ -11,43 +11,51 @@ class BooksTableSeeder extends Seeder
     {
         DB::table('books')->delete();
         Book::create([
-            'title'     => 'Nossa vida',
-            'price'    => '12.00',
+            'id' => 1,
+            'title' => 'Nossa vida',
+            'price' => '12.00',
         ]);
 
         Book::create([
-            'title'     => 'Aquele lugar',
-            'price'    => '15.00',
+            'id' => 2,
+            'title' => 'Aquele lugar',
+            'price' => '15.00',
         ]);
 
         Book::create([
-            'title'     => 'Sempre depressa',
-            'price'    => '20.00',
+            'id' => 3,
+            'title' => 'Sempre depressa',
+            'price' => '20.00',
         ]);
 
         Book::create([
-            'title'     => 'Mesmo caro',
-            'price'    => '142.00',
+            'id' => 4,
+            'title' => 'Mesmo caro',
+            'price' => '142.00',
         ]);
 
         Book::create([
-            'title'     => 'Que passou',
-            'price'    => '43.25',
+            'id' => 5,
+            'title' => 'Que passou',
+            'price' => '43.25',
         ]);
 
         Book::create([
-            'title'     => 'E ires a rua',
-            'price'    => '9.99',
+            'id' => 6,
+            'title' => 'E ires a rua',
+            'price' => '9.99',
         ]);
 
         Book::create([
-            'title'     => 'Santinho',
-            'price'    => '42.00',
+            'id' => 7,
+            'title' => 'Santinho',
+            'price' => '42.00',
         ]);
 
         Book::create([
-            'title'     => 'Risos',
-            'price'    => '32.99',
+            'id' => 8,
+            'title' => 'Risos',
+            'price' => '32.99',
         ]);
     }
 

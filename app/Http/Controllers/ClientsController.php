@@ -50,7 +50,7 @@ class ClientsController extends Controller
         $client->name = $request->name;
         $client->telefone = $request->telefone;
         $client->telemovel = $request->telemovel;
-        $client->debt = $request->debt;
+        $client->payment = $request->payment;
 
         $client->save();
         //success message
@@ -72,7 +72,7 @@ class ClientsController extends Controller
         $client->name = $request->name;
         $client->telefone = $request->telefone;
         $client->telemovel = $request->telemovel;
-        $client->debt = $request->debt;
+        $client->payment = $request->payment;
 
         $client->save();
         //success message

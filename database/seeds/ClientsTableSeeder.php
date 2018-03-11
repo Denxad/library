@@ -11,38 +11,43 @@ class ClientsTableSeeder extends Seeder
     {
         DB::table('clients')->delete();
         Client::create([
-            'name'     => 'Andre',
-            'telefone'    => '920030010',
+            'id' => 1,
+            'name' => 'Andre',
+            'telefone' => '920030010',
             'telemovel' => '910020300',
-            'debt' => '0.00'
+            'payment' => '0.00'
         ]);
 
         Client::create([
-            'name'     => 'Joao',
-            'telefone'    => '920030010',
+            'id' => 2,
+            'name' => 'Joao',
+            'telefone' => '920030010',
             'telemovel' => '910020300',
-            'debt' => '0.00'
+            'payment' => '0.00'
         ]);
 
         Client::create([
-            'name'     => 'Ricardo',
-            'telefone'    => '920030010',
+            'id' => 3,
+            'name' => 'Ricardo',
+            'telefone' => '920030010',
             'telemovel' => '910020300',
-            'debt' => '0.00'
+            'payment' => '0.00'
         ]);
 
         Client::create([
-            'name'     => 'Margarida',
-            'telefone'    => '920030010',
+            'id' => 4,
+            'name' => 'Margarida',
+            'telefone' => '920030010',
             'telemovel' => '910020300',
-            'debt' => '0.00'
+            'payment' => '0.00'
         ]);
 
         Client::create([
-            'name'     => 'Catarina',
-            'telefone'    => '920030010',
+            'id' => 5,
+            'name' => 'Catarina',
+            'telefone' => '920030010',
             'telemovel' => '910020300',
-            'debt' => '0.00'
+            'payment' => '0.00'
         ]);
     }
 

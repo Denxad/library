@@ -22,8 +22,8 @@ class BookClientTable extends Migration
             $table->timestamps();
 
             //foreign keys
-            $table->foreign('client_id')->references('id')->on('clients');
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
         });
     }
 

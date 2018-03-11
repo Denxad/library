@@ -23,4 +23,22 @@ class Client extends Model
     {
         return $this->belongsToMany('App\Models\Book');
     }
+
+    public function totalBookPrice() {
+        if(!count($this->books)) {
+            //Didn't buy any book
+            return 0;
+        }
+
+        $totalBookPrice = 0;
+        foreach($this->books as $book) {
+            $totalBookPrice += $book->price;
+        }
+
+        return $totalBookPrice;
+    }
+
+    public function getDebtAttribute() {
+        return $this->totalBookPrice() - $this->payment;
+    }
 }
