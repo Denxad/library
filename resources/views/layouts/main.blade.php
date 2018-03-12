@@ -1,14 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: xadden
- * Date: 04-03-2018
- * Time: 16:32
- */
-
-?>
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -125,9 +115,10 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
 @yield('scripts')
 </body>
 </html>

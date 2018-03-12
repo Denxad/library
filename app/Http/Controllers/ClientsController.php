@@ -38,8 +38,10 @@ class ClientsController extends Controller
             //Add Error Message
             return Redirect::to('clients');
         }
-        //success message
-        return view('clients.view')->with('client', $client);
+
+        $books = Book::pluck('title', 'id');
+
+        return view('clients.view', ['client' => $client, 'books' => $books]);
     }
 
     public function create(Request $request) {
@@ -91,27 +93,25 @@ class ClientsController extends Controller
         return Redirect::to('/clients');
     }
 
-    public function addBook(int $id, Request $request) {
-        $client = Client::find($id);
+    public function addBook(Request $request) {
+        $client_id = $request->input('client_id');
+        $book_id = $request->input('book_id');
+
+        $client = Client::find($client_id);
 
         if(!$client) {
             //Add Error Message
-            return Redirect::to('clients');
         }
 
-        if($request->method() == 'GET') {
-            $books = Book::pluck('title', 'id');
-            return view('clients.addbook', ['books' => $books, 'client' => $client]);
-        }
+        $book = Book::find($book_id);
 
         $bookClient = new BookClient();
         $bookClient->client_id = $client->id;
-//        $bookClient->book_id =
-//        $bookClient->price = ;
+        $bookClient->book_id = $book_id;
+        $bookClient->price = $book->price;
 
         if(!$bookClient->save()) {
             //Add Error Message
-            return Redirect::to('/client/' . $client->id);
         }
     }
 }

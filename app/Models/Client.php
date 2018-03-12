@@ -21,7 +21,7 @@ class Client extends Model
 
     public function books()
     {
-        return $this->belongsToMany('App\Models\Book');
+        return $this->belongsToMany('App\Models\Book')->withPivot('price', 'created_at');
     }
 
     public function totalBookPrice() {
@@ -32,7 +32,7 @@ class Client extends Model
 
         $totalBookPrice = 0;
         foreach($this->books as $book) {
-            $totalBookPrice += $book->price;
+            $totalBookPrice += $book->pivot->price;
         }
 
         return $totalBookPrice;

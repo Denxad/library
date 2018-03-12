@@ -1,19 +1,21 @@
-@extends('layouts.main')
-
-@section('title', 'Adicionar livro ao cliente')
-@section('header', 'Adicionar livro ao cliente')
-@section('small-header', $client->name . '#' . $client->id)
-
-@section('content')
-    <div class="update-form">
-        {{Form::open(['url' => '/client/'. $client->id . '/add/book'])}}
-
-        <div class="form-group">
-            {{ Form::label('books', 'Livro para adicionar') }}
-            {{ Form::select('books', $books, null) }}
+<div class="modal fade" id="modal-addbook">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Adicionar livro</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    {{ Form::label('books', 'Livro para adicionar') }} <br>
+                    {{ Form::select('books', $books, null, ['id' => 'selectBook']) }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modal-addbook-close" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+                <button class="btn btn-primary" id="modal-addbook-confirm" name="Submit" type="Submit">Confirmar</button>
+            </div>
         </div>
-
-            <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Confirmar</button>
-        {{ Form::close() }}
     </div>
-@stop
+</div>

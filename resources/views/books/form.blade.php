@@ -8,4 +8,4 @@
     <?= Form::text('price', null, ['class' => 'form-control'])?>
 </div>
 
-<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Confirmar</button>
+<button class="btn btn-lg btn-primary btn-block" name="Submit" type="Submit">Confirmar</button>

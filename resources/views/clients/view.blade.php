@@ -5,6 +5,7 @@
 @section('small-header', $client->name . '#' . $client->id)
 
 @section('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link type="text/css" rel="stylesheet" href="{{asset("css/dataTables.bootstrap.min.css")}}"/>
 @stop
 
@@ -21,6 +22,7 @@
                 <span><b>Nome:</b> {{$client->name}}</span>
                 <span><b>Telemóvel:</b> {{$client->telemovel}}</span>
                 <span><b>Telefone:</b> {{$client->telefone}}</span>
+                <span><b>Total pago:</b> {{$client->payment}} €</span>
                 <span><b>Dívida:</b> {{$client->debt}} €</span>
             </div>
         </div>
@@ -30,7 +32,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Livros comprados</h3>
             <div class="box-tools pull-right">
-                <a href="/client/{{$client->id}}/add/book" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
+                <a href="" data-toggle="modal" data-target="#modal-addbook" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
             </div>
         </div>
         <div class="box-body">
@@ -39,6 +41,7 @@
                 <tr>
                     <th>Título</th>
                     <th>Preço</th>
+                    <th>Data</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -46,7 +49,8 @@
                 @foreach($client->books as $book)
                     <tr>
                         <td>{{$book->title}}</td>
-                        <td>{{$book->price}} €</td>
+                        <td>{{$book->pivot->price}} €</td>
+                        <td>{{$book->pivot->created_at}}</td>
                         <td class="table-buttons btn-group">
                             <a href="/book/{{$book->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                         </td>
@@ -56,6 +60,8 @@
             </table>
         </div>
     </div>
+
+    @include('clients.addbook')
 @stop
 
 @section('scripts')
@@ -68,6 +74,7 @@
                 'lengthChange': true,
                 'searching': true,
                 'ordering': true,
+                'order': [[ 2, "desc" ]],
                 'info': true,
                 'autoWidth': false,
                 'language': {
@@ -88,7 +95,7 @@
                     }
                 },
                 "columnDefs": [
-                    { "width": "6.2%", "targets": 2, "orderable": false }
+                    { "width": "6.2%", "targets": 3, "orderable": false }
                 ]
             })
         })
