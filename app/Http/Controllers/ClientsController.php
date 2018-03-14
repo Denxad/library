@@ -28,7 +28,9 @@ class ClientsController extends Controller
     public function index() {
         $clients = Client::all();
 
-        return view('clients.index')->with('clients', $clients);
+        $books = Book::pluck('title', 'id');
+
+        return view('clients.index', ['clients' => $clients, 'books' => $books]);
     }
 
     public function view(int $id) {

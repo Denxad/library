@@ -41,12 +41,14 @@
                     <td>{{$client->debt}} €</td>
                     <td class="btn-group">
                         <a href="/client/{{$client->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a href="/client/{{$client->id}}/add/book" class="btn btn-warning"><i class="fas fa-plus"></i></a>
+                        <a id="addbook" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    @include('clients.addbook')
 @stop
 
 @section('scripts')

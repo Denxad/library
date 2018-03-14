@@ -32,7 +32,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Livros comprados</h3>
             <div class="box-tools pull-right">
-                <a href="" data-toggle="modal" data-target="#modal-addbook" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
+                <a id="addbook" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
             </div>
         </div>
         <div class="box-body">

@@ -6,17 +6,20 @@ $(function () {
                 }
             });
 
+            var id = $("#addbook").attr('data-idclient');
+
             $.ajax({
                 method: 'POST',
                 url: '/client/add/book',
-                data: {'client_id': '1', 'book_id': $("#selectBook").val()},
+                data: {'client_id': id, 'book_id': $("#selectBook").val()},
                 success: function (response) {
                     $('#modal-addbook').modal('hide');
                     $('body').removeClass('modal-open');
                     $('.modal-backdrop').remove();
+                    location.reload(true); //TODO ajax request instead of forcing reload
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    console.log('Error ajax addbook'); //TODO
+                    console.log(jqXHR); //TODO
                 }
             });
         }
