@@ -4,8 +4,6 @@
 @section('header', 'Dashboard')
 @section('small-header', 'TODO')
 
-@section('box-title', 'Hello box header');
-
 @section('content')
-    <p>This is my body content.</p>
+    <p><b>Maybe add total debt from all members idk</b></p>
 @stop

@@ -12,6 +12,7 @@
 @section('small-header', 'TODO')
 
 @section('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link type="text/css" rel="stylesheet" href="{{asset("css/dataTables.bootstrap.min.css")}}"/>
 @stop
 
@@ -37,11 +38,12 @@
                     <td>{{$client->name}}</td>
                     <td>{{$client->telemovel}}</td>
                     <td>{{$client->telefone}}</td>
-                    <td>{{$client->payment}}</td>
+                    <td>{{$client->payment}} €</td>
                     <td>{{$client->debt}} €</td>
                     <td class="btn-group">
                         <a href="/client/{{$client->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                         <a id="addbook" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
+                        <a id="addpayment" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
@@ -49,6 +51,7 @@
     </table>
 
     @include('clients.addbook')
+    @include('clients.addpayment')
 @stop
 
 @section('scripts')
@@ -81,7 +84,7 @@
                     }
                 },
                 "columnDefs": [
-                    { "width": "6.2%", "targets": 5, "orderable": false }
+                    { "width": "9.1%", "targets": 5, "orderable": false }
                 ]
             })
         })

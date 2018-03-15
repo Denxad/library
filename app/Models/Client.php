@@ -19,9 +19,13 @@ class Client extends Model
 
     public $timestamps = false;
 
-    public function books()
-    {
-        return $this->belongsToMany('App\Models\Book')->withPivot('price', 'created_at');
+    public function getPaymentAttribute() {
+        $totalPayment = 0;
+        foreach($this->payments as $payment) {
+            $totalPayment += $payment->amount;
+        }
+
+        return $totalPayment;
     }
 
     public function totalBookPrice() {
@@ -41,4 +45,13 @@ class Client extends Model
     public function getDebtAttribute() {
         return $this->totalBookPrice() - $this->payment;
     }
+
+    public function books() {
+        return $this->belongsToMany('App\Models\Book')->withPivot('price', 'created_at');
+    }
+
+    public function payments() {
+        return $this->hasMany('App\Models\Payment');
+    }
+
 }

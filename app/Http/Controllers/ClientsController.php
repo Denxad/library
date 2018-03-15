@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\BookClient;
 use App\Models\Client;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -113,6 +114,26 @@ class ClientsController extends Controller
         $bookClient->price = $book->price;
 
         if(!$bookClient->save()) {
+            //Add Error Message
+        }
+    }
+
+    public function addPayment(Request $request) {
+        $client_id = $request->input('client_id');
+        $amount = $request->input('amount');
+
+        $client = Client::find($client_id);
+
+        if(!$client) {
+            //Add Error Message
+        }
+
+        $payment = new Payment();
+
+        $payment->client_id = $client_id;
+        $payment->amount = $amount;
+
+        if(!$payment->save()) {
             //Add Error Message
         }
     }

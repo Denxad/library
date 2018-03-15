@@ -29,6 +29,7 @@ Route::get('/client/update/{id}', 'ClientsController@update');
 Route::post('/client/update/{id}', 'ClientsController@update');
 Route::get('/client/delete/{id}', 'ClientsController@delete');
 Route::post('/client/add/book', 'ClientsController@addBook');
+Route::post('/client/add/payment', 'ClientsController@addPayment');
 
 //Books Controller
 Route::get('/books', 'BooksController@index');
