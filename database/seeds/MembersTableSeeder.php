@@ -15,7 +15,6 @@ class MembersTableSeeder extends Seeder
             'name' => 'Andre',
             'telefone' => '920030010',
             'telemovel' => '910020300',
-            'payment' => '0.00'
         ]);
 
         Member::create([
@@ -23,7 +22,6 @@ class MembersTableSeeder extends Seeder
             'name' => 'Joao',
             'telefone' => '920030010',
             'telemovel' => '910020300',
-            'payment' => '0.00'
         ]);
 
         Member::create([
@@ -31,7 +29,6 @@ class MembersTableSeeder extends Seeder
             'name' => 'Ricardo',
             'telefone' => '920030010',
             'telemovel' => '910020300',
-            'payment' => '0.00'
         ]);
 
         Member::create([
@@ -39,7 +36,6 @@ class MembersTableSeeder extends Seeder
             'name' => 'Margarida',
             'telefone' => '920030010',
             'telemovel' => '910020300',
-            'payment' => '0.00'
         ]);
 
         Member::create([
@@ -47,7 +43,6 @@ class MembersTableSeeder extends Seeder
             'name' => 'Catarina',
             'telefone' => '920030010',
             'telemovel' => '910020300',
-            'payment' => '0.00'
         ]);
     }
 

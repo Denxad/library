@@ -1,4 +1,12 @@
-@extends('layouts.main')
+@extends('layouts.main', [
+    'options' => [
+        'delete-member' => [
+            'url' => '/member/delete/' . $member->id,
+            'text' => 'Eliminar membro',
+            'icon' => 'fa-exclamation-triangle'
+        ]
+    ]
+])
 
 @section('title', 'Livraria - '. $member->name)
 @section('header', 'Detalhes do membro')

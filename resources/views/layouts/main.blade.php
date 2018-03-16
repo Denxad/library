@@ -61,8 +61,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/clients">
-                        <i class="fa fa-user"></i> <span>Clientes</span>
+                    <a href="/members">
+                        <i class="fa fa-user"></i> <span>Membros</span>
                     </a>
                 </li>
                 <li>
@@ -88,7 +88,11 @@
                         <span class="fa fa-caret-down"></span></button>
                     <ul id="hermit" class="dropdown-menu">
                         @foreach($options as $option)
-                            <li><a href="{{ $option['url'] }}">{{ $option['text'] }}</a></li>
+                            <li><a href="{{ $option['url'] }}">
+                            @if(isset($option['icon']))
+                                <i class="fas {{@$option['icon']}}"></i>
+                            @endif
+                            {{ $option['text'] }}</a></li>
                         @endforeach
                     </ul>
                 </div>

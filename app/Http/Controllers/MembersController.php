@@ -57,7 +57,6 @@ class MembersController extends Controller
         $member->name = $request->name;
         $member->telefone = $request->telefone;
         $member->telemovel = $request->telemovel;
-        $member->payment = $request->payment;
 
         $member->save();
         //success message
@@ -79,7 +78,6 @@ class MembersController extends Controller
         $member->name = $request->name;
         $member->telefone = $request->telefone;
         $member->telemovel = $request->telemovel;
-        $member->payment = $request->payment;
 
         $member->save();
         //success message

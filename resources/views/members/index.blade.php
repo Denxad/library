@@ -1,6 +1,6 @@
 @extends('layouts.main', [
     'options' => [
-        'create-client' => [
+        'create-member' => [
             'url' => '/member/create',
             'text' => 'Adicionar membro'
         ]

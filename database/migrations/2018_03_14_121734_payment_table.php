@@ -13,9 +13,9 @@ class PaymentTable extends Migration
      */
     public function up()
     {
-//        Schema::table('members', function (Blueprint $table) {
-//            $table->dropColumn('payment');
-//        });
+        Schema::table('members', function (Blueprint $table) {
+            $table->dropColumn('payment');
+        });
 
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
@@ -36,6 +36,7 @@ class PaymentTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('payments');
     }
 }

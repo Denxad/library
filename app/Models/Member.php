@@ -5,6 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/*
+ * @param int $id
+ * @param string $name
+ * @param string $telefone
+ * @param string $telemovel
+ */
+
 class Member extends Model
 {
     use SoftDeletes;
