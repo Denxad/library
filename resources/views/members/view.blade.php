@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Livraria - '. $client->name)
-@section('header', 'Detalhes do cliente')
-@section('small-header', $client->name . '#' . $client->id)
+@section('title', 'Livraria - '. $member->name)
+@section('header', 'Detalhes do membro')
+@section('small-header', $member->name . '#' . $member->id)
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -14,16 +14,16 @@
         <div class="box-header no-border">
             <h3 class="box-title">Detalhes Pessoais</h3>
             <div class="box-tools pull-right">
-                <a href="/client/update/{{$client->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                <a href="/member/update/{{$member->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
             </div>
         </div>
         <div class="box-body">
             <div class="model-details">
-                <span><b>Nome:</b> {{$client->name}}</span>
-                <span><b>Telemóvel:</b> {{$client->telemovel}}</span>
-                <span><b>Telefone:</b> {{$client->telefone}}</span>
-                <span><b>Total pago:</b> {{$client->payment}} €</span>
-                <span><b>Dívida:</b> {{$client->debt}} €</span>
+                <span><b>Nome:</b> {{$member->name}}</span>
+                <span><b>Telemóvel:</b> {{$member->telemovel}}</span>
+                <span><b>Telefone:</b> {{$member->telefone}}</span>
+                <span><b>Total pago:</b> {{$member->payment}} €</span>
+                <span><b>Dívida:</b> {{$member->debt}} €</span>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Livros comprados</h3>
             <div class="box-tools pull-right">
-                <a id="addbook" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
+                <a id="addbook" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn-sm btn-block bg-navy"><i class="fas fa-plus"></i></a>
             </div>
         </div>
         <div class="box-body">
@@ -46,7 +46,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($client->books as $book)
+                @foreach($member->books as $book)
                     <tr>
                         <td>{{$book->title}}</td>
                         <td>{{$book->pivot->price}} €</td>
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    @include('clients.addbook')
+    @include('members.addbook')
 @stop
 
 @section('scripts')

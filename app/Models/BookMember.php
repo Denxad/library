@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BookClient extends Model
+class BookMember extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +14,7 @@ class BookClient extends Model
      *
      * @var string
      */
-    protected $table = 'book_client';
+    protected $table = 'book_member';
     protected $dates = ['deleted_at'];
 
     public $timestamps = true;

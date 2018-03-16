@@ -25,7 +25,7 @@
             <h3 class="box-title">TODO</h3>
         </div>
         <div class="box-body">
-            maybe list of clients that bought the book or have yet to pay
+            maybe list of members that bought the book or have yet to pay
         </div>
     </div>
 @stop

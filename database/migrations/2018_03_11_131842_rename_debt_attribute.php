@@ -13,7 +13,7 @@ class RenameDebtAttribute extends Migration
      */
     public function up()
     {
-        Schema::table('clients', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             $table->renameColumn('debt', 'payment');
         });
     }
@@ -25,7 +25,7 @@ class RenameDebtAttribute extends Migration
      */
     public function down()
     {
-        Schema::table('clients', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             $table->renameColumn('payment', 'debt');
         });
     }

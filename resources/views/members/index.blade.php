@@ -1,14 +1,14 @@
 @extends('layouts.main', [
     'options' => [
         'create-client' => [
-            'url' => '/client/create',
-            'text' => 'Adicionar cliente'
+            'url' => '/member/create',
+            'text' => 'Adicionar membro'
         ]
     ]
 ])
 
-@section('title', 'Livraria - Clientes')
-@section('header', 'Lista de clientes')
+@section('title', 'Livraria - Membros')
+@section('header', 'Lista de membros')
 @section('small-header', 'TODO')
 
 @section('css')
@@ -17,7 +17,7 @@
 @stop
 
 @section('header-options')
-    <li><a href="/client/create">Adicionar cliente</a></li>
+    <li><a href="/member/create">Adicionar membro</a></li>
 @stop
 
 @section('content')
@@ -33,25 +33,25 @@
         </tr>
         </thead>
         <tbody>
-            @foreach($clients as $client)
+            @foreach($members as $member)
                 <tr>
-                    <td>{{$client->name}}</td>
-                    <td>{{$client->telemovel}}</td>
-                    <td>{{$client->telefone}}</td>
-                    <td>{{$client->payment}} €</td>
-                    <td>{{$client->debt}} €</td>
+                    <td>{{$member->name}}</td>
+                    <td>{{$member->telemovel}}</td>
+                    <td>{{$member->telefone}}</td>
+                    <td>{{$member->payment}} €</td>
+                    <td>{{$member->debt}} €</td>
                     <td class="btn-group">
-                        <a href="/client/{{$client->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a id="addbook" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
-                        <a id="addpayment" href="" data-idclient="{{$client->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
+                        <a href="/member/{{$member->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                        <a id="addbook" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
+                        <a id="addpayment" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    @include('clients.addbook')
-    @include('clients.addpayment')
+    @include('members.addbook')
+    @include('members.addpayment')
 @stop
 
 @section('scripts')

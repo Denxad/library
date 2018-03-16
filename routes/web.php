@@ -20,16 +20,16 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //Home Controller
 Route::get('/home', 'HomeController@index');
 
-//Clients Controller
-Route::get('/clients', 'ClientsController@index');
-Route::get('/client/create', 'ClientsController@create');
-Route::post('/client/create', 'ClientsController@create');
-Route::get('/client/{id}', 'ClientsController@view');
-Route::get('/client/update/{id}', 'ClientsController@update');
-Route::post('/client/update/{id}', 'ClientsController@update');
-Route::get('/client/delete/{id}', 'ClientsController@delete');
-Route::post('/client/add/book', 'ClientsController@addBook');
-Route::post('/client/add/payment', 'ClientsController@addPayment');
+//Members Controller
+Route::get('/members', 'MembersController@index');
+Route::get('/member/create', 'MembersController@create');
+Route::post('/member/create', 'MembersController@create');
+Route::get('/member/{id}', 'MembersController@view');
+Route::get('/member/update/{id}', 'MembersController@update');
+Route::post('/member/update/{id}', 'MembersController@update');
+Route::get('/member/delete/{id}', 'MembersController@delete');
+Route::post('/member/add/book', 'MembersController@addBook');
+Route::post('/member/add/payment', 'MembersController@addPayment');
 
 //Books Controller
 Route::get('/books', 'BooksController@index');

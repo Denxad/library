@@ -2,15 +2,15 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Client;
+use App\Models\Member;
 
-class ClientsTableSeeder extends Seeder
+class MembersTableSeeder extends Seeder
 {
 
     public function run()
     {
-        DB::table('clients')->delete();
-        Client::create([
+        DB::table('members')->delete();
+        Member::create([
             'id' => 1,
             'name' => 'Andre',
             'telefone' => '920030010',
@@ -18,7 +18,7 @@ class ClientsTableSeeder extends Seeder
             'payment' => '0.00'
         ]);
 
-        Client::create([
+        Member::create([
             'id' => 2,
             'name' => 'Joao',
             'telefone' => '920030010',
@@ -26,7 +26,7 @@ class ClientsTableSeeder extends Seeder
             'payment' => '0.00'
         ]);
 
-        Client::create([
+        Member::create([
             'id' => 3,
             'name' => 'Ricardo',
             'telefone' => '920030010',
@@ -34,7 +34,7 @@ class ClientsTableSeeder extends Seeder
             'payment' => '0.00'
         ]);
 
-        Client::create([
+        Member::create([
             'id' => 4,
             'name' => 'Margarida',
             'telefone' => '920030010',
@@ -42,7 +42,7 @@ class ClientsTableSeeder extends Seeder
             'payment' => '0.00'
         ]);
 
-        Client::create([
+        Member::create([
             'id' => 5,
             'name' => 'Catarina',
             'telefone' => '920030010',

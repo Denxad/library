@@ -7,7 +7,7 @@
 @section('content')
     <div class="update-form">
         {{Form::model($client, ['url' => '/client/update/' . $client->id])}}
-        @include('clients.form')
+        @include('members.form')
         {{ Form::close() }}
     </div>
 @stop

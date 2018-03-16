@@ -6,12 +6,12 @@ $(function () {
                 }
             });
 
-            var id = $("#addbook").attr('data-idclient');
+            var id = $("#addbook").attr('data-idmember');
 
             $.ajax({
                 method: 'POST',
-                url: '/client/add/book',
-                data: {'client_id': id, 'book_id': $("#selectBook").val()},
+                url: '/member/add/book',
+                data: {'member_id': id, 'book_id': $("#selectBook").val()},
                 success: function (response) {
                     $('#modal-addbook').modal('hide');
                     $('body').removeClass('modal-open');
@@ -34,12 +34,12 @@ $(function () {
                 }
             });
 
-            var id = $("#addpayment").attr('data-idclient');
+            var id = $("#addpayment").attr('data-idmember');
 
             $.ajax({
                 method: 'POST',
-                url: '/client/add/payment',
-                data: {'client_id': id, 'amount': $("#amount").val()},
+                url: '/member/add/payment',
+                data: {'member_id': id, 'amount': $("#amount").val()},
                 success: function (response) {
                     $('#modal-addpayment').modal('hide');
                     $('body').removeClass('modal-open');
