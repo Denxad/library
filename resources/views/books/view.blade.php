@@ -9,7 +9,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Detalhes do livro</h3>
             <div class="box-tools pull-right">
-                <a href="/book/update/{{$book->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                <a href="/book/edit/{{$book->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
             </div>
         </div>
         <div class="box-body">

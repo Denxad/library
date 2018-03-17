@@ -22,7 +22,7 @@
         <div class="box-header no-border">
             <h3 class="box-title">Detalhes Pessoais</h3>
             <div class="box-tools pull-right">
-                <a href="/member/update/{{$member->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                <a href="/member/edit/{{$member->id}}" class="btn-sm btn-block btn-warning"><i class="fas fa-pencil-alt"></i></a>
             </div>
         </div>
         <div class="box-body">

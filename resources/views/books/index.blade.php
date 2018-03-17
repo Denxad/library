@@ -1,7 +1,7 @@
 @extends('layouts.main', [
     'options' => [
-        'create-books' => [
-            'url' => '/book/create',
+        'add-books' => [
+            'url' => '/book/add',
             'text' => 'Adicionar livro'
         ]
     ]
@@ -31,7 +31,7 @@
                     <td>{{$book->price}} €</td>
                     <td class="table-buttons btn-group">
                         <a href="/book/{{$book->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a href="/book/update/{{$book->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/book/edit/{{$book->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                     </td>
                 </tr>
             @endforeach

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Member\CreateMember;
+use App\Http\Requests\Member\StoreMember;
 use App\Models\Book;
 use App\Models\BookMember;
 use App\Models\Member;
@@ -50,7 +50,7 @@ class MembersController extends Controller {
         return view('members.create');
     }
 
-    public function create(CreateMember $request) {
+    public function create(StoreMember $request) {
         $member = new Member();
 
         $member->name = $request->name;
@@ -65,7 +65,13 @@ class MembersController extends Controller {
         return Redirect::to('member/' . $member->id);
     }
 
-    public function update(int $id, Request $request) {
+    public function edit(int $id) {
+        $member = Member::find($id);
+
+        return view('members.update')->with('member', $member);
+    }
+
+    public function update(int $id, StoreMember $request) {
         $member = Member::find($id);
 
         if (!$member) {
@@ -73,15 +79,15 @@ class MembersController extends Controller {
             return Redirect::to('members');
         }
 
-        if ($request->method() == 'GET') {
-            return view('members.update')->with('member', $member);
-        }
-
         $member->name = $request->name;
         $member->telefone = $request->telefone;
         $member->telemovel = $request->telemovel;
 
-        $member->save();
+        if(!$member->save()) {
+            //Add Error Message
+            return Redirect::to('member/' . $member->id);
+        }
+
         //success message
         return Redirect::to('member/' . $member->id);
     }

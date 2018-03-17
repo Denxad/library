@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Book\StoreBook;
 use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -40,11 +41,11 @@ class BooksController extends Controller
         return view('books.view')->with('book', $book);
     }
 
-    public function create(Request $request) {
-        if($request->method() == 'GET') {
-            return view('books.create');
-        }
+    public function add() {
+        return view('books.create');
+    }
 
+    public function create(StoreBook $request) {
         $book = new Book();
 
         $book->title = $request->title;
@@ -58,7 +59,7 @@ class BooksController extends Controller
         return Redirect::to('book/' . $book->id);
     }
 
-    public function update(int $id, Request $request) {
+    public function edit(int $id) {
         $book = Book::find($id);
 
         if(!$book) {
@@ -66,14 +67,25 @@ class BooksController extends Controller
             return Redirect::to('books');
         }
 
-        if($request->method() == 'GET') {
-            return view('books.update')->with('book', $book);
+        return view('books.update')->with('book', $book);
+    }
+
+    public function update(int $id, StoreBook $request) {
+        $book = Book::find($id);
+
+        if(!$book) {
+            //Add Error Message
+            return Redirect::to('books');
         }
 
         $book->title = $request->title;
         $book->price = $request->price;
 
-        $book->save();
+        if (!$book->save()) {
+            //error message
+            return Redirect::to('books');
+        }
+
         //success message
         return Redirect::to('book/' . $book->id);
     }

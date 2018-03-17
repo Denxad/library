@@ -25,7 +25,7 @@ Route::get('/members', 'MembersController@index');
 Route::get('/member/add', 'MembersController@add');
 Route::post('/member/create', 'MembersController@create');
 Route::get('/member/{id}', 'MembersController@view');
-Route::get('/member/update/{id}', 'MembersController@update');
+Route::get('/member/edit/{id}', 'MembersController@edit');
 Route::post('/member/update/{id}', 'MembersController@update');
 Route::get('/member/delete/{id}', 'MembersController@delete');
 Route::post('/member/add/book', 'MembersController@addBook');
@@ -33,9 +33,9 @@ Route::post('/member/add/payment', 'MembersController@addPayment');
 
 //Books Controller
 Route::get('/books', 'BooksController@index');
-Route::get('/book/create', 'BooksController@create');
+Route::get('/book/add', 'BooksController@add');
 Route::post('/book/create', 'BooksController@create');
 Route::get('/book/{id}', 'BooksController@view');
-Route::get('/book/update/{id}', 'BooksController@update');
+Route::get('/book/edit/{id}', 'BooksController@edit');
 Route::post('/book/update/{id}', 'BooksController@update');
 Route::get('/book/delete/{id}', 'BooksController@delete');
