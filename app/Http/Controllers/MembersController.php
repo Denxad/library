@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Member\CreateMember;
 use App\Models\Book;
 use App\Models\BookMember;
 use App\Models\Member;
@@ -9,8 +10,7 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class MembersController extends Controller
-{
+class MembersController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Members Controller
@@ -21,8 +21,7 @@ class MembersController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('loggedin');
     }
 
@@ -37,7 +36,7 @@ class MembersController extends Controller
     public function view(int $id) {
         $member = Member::find($id);
 
-        if(!$member) {
+        if (!$member) {
             //Add Error Message
             return Redirect::to('members');
         }
@@ -47,31 +46,34 @@ class MembersController extends Controller
         return view('members.view', ['member' => $member, 'books' => $books]);
     }
 
-    public function create(Request $request) {
-        if($request->method() == 'GET') {
-            return view('members.create');
-        }
+    public function add() {
+        return view('members.create');
+    }
 
+    public function create(CreateMember $request) {
         $member = new Member();
 
         $member->name = $request->name;
         $member->telefone = $request->telefone;
         $member->telemovel = $request->telemovel;
 
-        $member->save();
-        //success message
+        if (!$member->save()) {
+            //error message
+            return view('members.create');
+        }
+
         return Redirect::to('member/' . $member->id);
     }
 
     public function update(int $id, Request $request) {
         $member = Member::find($id);
 
-        if(!$member) {
+        if (!$member) {
             //Add Error Message
             return Redirect::to('members');
         }
 
-        if($request->method() == 'GET') {
+        if ($request->method() == 'GET') {
             return view('members.update')->with('member', $member);
         }
 
@@ -100,7 +102,7 @@ class MembersController extends Controller
 
         $member = Member::find($member_id);
 
-        if(!$member) {
+        if (!$member) {
             //Add Error Message
         }
 
@@ -111,7 +113,7 @@ class MembersController extends Controller
         $bookMember->book_id = $book_id;
         $bookMember->price = $book->price;
 
-        if(!$bookMember->save()) {
+        if (!$bookMember->save()) {
             //Add Error Message
         }
     }
@@ -122,7 +124,7 @@ class MembersController extends Controller
 
         $member = Member::find($member_id);
 
-        if(!$member) {
+        if (!$member) {
             //Add Error Message
         }
 
@@ -131,7 +133,7 @@ class MembersController extends Controller
         $payment->member_id = $member_id;
         $payment->amount = $amount;
 
-        if(!$payment->save()) {
+        if (!$payment->save()) {
             //Add Error Message
         }
     }

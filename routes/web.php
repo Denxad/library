@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index');
 
 //Members Controller
 Route::get('/members', 'MembersController@index');
-Route::get('/member/create', 'MembersController@create');
+Route::get('/member/add', 'MembersController@add');
 Route::post('/member/create', 'MembersController@create');
 Route::get('/member/{id}', 'MembersController@view');
 Route::get('/member/update/{id}', 'MembersController@update');

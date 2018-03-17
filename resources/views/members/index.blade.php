@@ -1,7 +1,7 @@
 @extends('layouts.main', [
     'options' => [
         'create-member' => [
-            'url' => '/member/create',
+            'url' => '/member/add',
             'text' => 'Adicionar membro'
         ]
     ]
@@ -17,7 +17,7 @@
 @stop
 
 @section('header-options')
-    <li><a href="/member/create">Adicionar membro</a></li>
+    <li><a href="/member/add">Adicionar membro</a></li>
 @stop
 
 @section('content')
