@@ -127,6 +127,12 @@ class MembersController extends Controller {
     public function addPayment(Request $request) {
         $member_id = $request->input('member_id');
         $amount = $request->input('amount');
+        if($request->input('payment_date')) {
+            $payment_date = strtotime($request->input('payment_date'));
+            $payment_date = date('Y-m-d', $payment_date);
+        } else {
+            $payment_date = date('Y-m-d');
+        }
 
         $member = Member::find($member_id);
 
@@ -138,6 +144,7 @@ class MembersController extends Controller {
 
         $payment->member_id = $member_id;
         $payment->amount = $amount;
+        $payment->payment_date = $payment_date;
 
         if (!$payment->save()) {
             //Add Error Message

@@ -14,6 +14,7 @@
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link type="text/css" rel="stylesheet" href="{{asset("css/dataTables.bootstrap.min.css")}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset("css/bootstrap-datepicker.min.css")}}"/>
 @stop
 
 @section('header-options')
@@ -57,6 +58,7 @@
 @section('scripts')
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
     <script>
         $(function () {
             $('table').DataTable({
@@ -87,6 +89,11 @@
                     { "width": "9.1%", "targets": 5, "orderable": false }
                 ]
             })
+        })
+    </script>
+    <script>
+        $('#datepicker').datepicker({
+            autoclose: true
         })
     </script>
 @stop

@@ -39,7 +39,7 @@ $(function () {
             $.ajax({
                 method: 'POST',
                 url: '/member/add/payment',
-                data: {'member_id': id, 'amount': $("#amount").val()},
+                data: {'member_id': id, 'amount': $("#amount").val(), 'payment_date': $('#datepicker').val()},
                 success: function (response) {
                     $('#modal-addpayment').modal('hide');
                     $('body').removeClass('modal-open');
