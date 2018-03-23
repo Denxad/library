@@ -68,6 +68,13 @@ class MembersController extends Controller {
     public function edit(int $id) {
         $member = Member::find($id);
 
+        if (!$member) {
+            return Redirect::to('members', ['alert' => [
+                'bold-message' => 'Erro!',
+                'message' => 'O membro que tentou editar não existe'
+            ]]);
+        }
+
         return view('members.update')->with('member', $member);
     }
 

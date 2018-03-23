@@ -21,6 +21,7 @@
                         {{ Form::text('payment_date', null, ['class' => 'form-control pull-right', 'id' => 'datepicker', 'placeholder' => 'Deixe em branco para usar o dia de hoje']) }}
                     </div>
                 </div>
+                {{ Form::hidden('id', null, ['id' => 'memberPaymentId']) }}
             </div>
             <div class="modal-footer">
                 <button type="button" id="modal-addpayment-close" class="btn btn-default pull-left"

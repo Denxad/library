@@ -77,6 +77,12 @@
     <!-- =============================================== -->
 
     <div class="content-wrapper">
+        @if(isset($alert))
+            <div class="alert alert-popup alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                <strong>{{ $alert['bold-message'] }}</strong> {{ $alert['message'] }}
+            </div>
+        @endif
         <section class="content-header">
             <h1>
                 @yield('header')

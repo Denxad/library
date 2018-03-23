@@ -11,6 +11,7 @@
                     {{ Form::label('books', 'Livro para adicionar') }} <br>
                     {{ Form::select('books', $books, null, ['id' => 'selectBook']) }}
                 </div>
+                {{ Form::hidden('id', null, ['id' => 'memberBookId']) }}
             </div>
             <div class="modal-footer">
                 <button type="button" id="modal-addbook-close" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>

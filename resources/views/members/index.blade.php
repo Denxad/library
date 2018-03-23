@@ -43,8 +43,8 @@
                     <td>{{$member->debt}} €</td>
                     <td class="btn-group">
                         <a href="/member/{{$member->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a id="addbook" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
-                        <a id="addpayment" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
+                        <a id="addbook-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
+                        <a id="addpayment-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
                     </td>
                 </tr>
             @endforeach
