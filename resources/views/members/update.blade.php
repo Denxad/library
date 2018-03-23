@@ -5,9 +5,13 @@
 @section('small-header', $member->name)
 
 @section('content')
-    <div class="update-form">
-        {{Form::model($member, ['url' => '/member/update/' . $member->id])}}
-        @include('members.form')
-        {{ Form::close() }}
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="update-form">
+                {{Form::model($member, ['url' => '/member/update/' . $member->id])}}
+                @include('members.form')
+                {{ Form::close() }}
+            </div>
+        </div>
     </div>
 @stop

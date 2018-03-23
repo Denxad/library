@@ -22,37 +22,41 @@
 @stop
 
 @section('content')
-    <table id="table" class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Telemóvel</th>
-            <th>Telefone</th>
-            <th>Total pago</th>
-            <th>Dívida</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach($members as $member)
+    <div class="box box-primary">
+        <div class="box-body">
+            <table id="table" class="table table-bordered table-hover">
+                <thead>
                 <tr>
-                    <td>{{$member->name}}</td>
-                    <td>{{$member->telemovel}}</td>
-                    <td>{{$member->telefone}}</td>
-                    <td>{{$member->payment}} €</td>
-                    <td>{{$member->debt}} €</td>
-                    <td class="btn-group">
-                        <a href="/member/{{$member->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a id="addbook-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
-                        <a id="addpayment-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
-                    </td>
+                    <th>Nome</th>
+                    <th>Telemóvel</th>
+                    <th>Telefone</th>
+                    <th>Total pago</th>
+                    <th>Dívida</th>
+                    <th></th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+                </thead>
+                <tbody>
+                @foreach($members as $member)
+                    <tr>
+                        <td>{{$member->name}}</td>
+                        <td>{{$member->telemovel}}</td>
+                        <td>{{$member->telefone}}</td>
+                        <td>{{$member->payment}} €</td>
+                        <td>{{$member->debt}} €</td>
+                        <td class="btn-group">
+                            <a href="/member/{{$member->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                            <a id="addbook-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addbook" class="btn btn-warning"><i class="fas fa-plus"></i></a>
+                            <a id="addpayment-{{$member->id}}" href="" data-idmember="{{$member->id}}" data-toggle="modal" data-target="#modal-addpayment" class="btn btn-danger"><i class="fas fa-money-bill-alt"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    @include('members.addbook')
-    @include('members.addpayment')
+    @include('members.addbook-modal')
+    @include('members.addpayment-modal')
 @stop
 
 @section('scripts')

@@ -97,8 +97,8 @@
         </div>
     </div>
 
-    @include('members.addbook')
-    @include('members.addpayment')
+    @include('members.addbook-modal')
+    @include('members.addpayment-modal')
 @stop
 
 @section('scripts')

@@ -16,27 +16,31 @@
 @stop
 
 @section('content')
-    <table id="table" class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>Título</th>
-            <th>Preço</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach($books as $book)
+    <div class="box box-primary">
+        <div class="box-body">
+            <table id="table" class="table table-bordered table-hover">
+                <thead>
                 <tr>
-                    <td>{{$book->title}}</td>
-                    <td>{{$book->price}} €</td>
-                    <td class="table-buttons btn-group">
-                        <a href="/book/{{$book->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                        <a href="/book/edit/{{$book->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                    </td>
+                    <th>Título</th>
+                    <th>Preço</th>
+                    <th></th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+                </thead>
+                <tbody>
+                @foreach($books as $book)
+                    <tr>
+                        <td>{{$book->title}}</td>
+                        <td>{{$book->price}} €</td>
+                        <td class="table-buttons btn-group">
+                            <a href="/book/{{$book->id}}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                            <a href="/book/edit/{{$book->id}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @stop
 
 @section('scripts')
@@ -52,24 +56,24 @@
                 'info': true,
                 'autoWidth': false,
                 'language': {
-                    "sProcessing":   "A processar...",
-                    "sLengthMenu":   "Mostrar _MENU_ registos",
-                    "sZeroRecords":  "Não foram encontrados resultados",
-                    "sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registos",
-                    "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registos",
+                    "sProcessing": "A processar...",
+                    "sLengthMenu": "Mostrar _MENU_ registos",
+                    "sZeroRecords": "Não foram encontrados resultados",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                    "sInfoEmpty": "Mostrando de 0 até 0 de 0 registos",
                     "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
-                    "sInfoPostFix":  "",
-                    "sSearch":       "Procurar:",
-                    "sUrl":          "",
+                    "sInfoPostFix": "",
+                    "sSearch": "Procurar:",
+                    "sUrl": "",
                     "oPaginate": {
-                        "sFirst":    "Primeiro",
+                        "sFirst": "Primeiro",
                         "sPrevious": "Anterior",
-                        "sNext":     "Seguinte",
-                        "sLast":     "Último"
+                        "sNext": "Seguinte",
+                        "sLast": "Último"
                     }
                 },
                 "columnDefs": [
-                    { "width": "6.2%", "targets": 2, "orderable": false }
+                    {"width": "6.2%", "targets": 2, "orderable": false}
                 ]
             })
         })

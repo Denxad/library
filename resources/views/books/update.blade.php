@@ -5,9 +5,13 @@
 @section('small-header', $book->title)
 
 @section('content')
-    <div class="update-form">
-        {{Form::model($book, ['url' => '/book/update/' . $book->id])}}
-        @include('books.form')
-        {{ Form::close() }}
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="update-form">
+                {{Form::model($book, ['url' => '/book/update/' . $book->id])}}
+                @include('books.form')
+                {{ Form::close() }}
+            </div>
+        </div>
     </div>
 @stop

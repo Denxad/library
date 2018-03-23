@@ -104,18 +104,8 @@
                 </div>
             @endif
         </section>
-
         <section class="content">
-            <div class="box box-primary">
-                <div class="box-header no-border header-with-buttons">
-                    <div class="box-tools pull-right">
-                        @yield('buttons-view')
-                    </div>
-                </div>
-                <div class="box-body">
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
         </section>
     </div>
 

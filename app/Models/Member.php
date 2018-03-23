@@ -50,7 +50,7 @@ class Member extends Model
     }
 
     public function getDebtAttribute() {
-        return $this->totalBookPrice() - $this->payment;
+        return round($this->totalBookPrice() - $this->payment, 2);
     }
 
     public function books() {
