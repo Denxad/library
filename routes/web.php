@@ -19,6 +19,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 //Home Controller
 Route::get('/home', 'HomeController@index');
+Route::get('/paymentsaleschart', 'HomeController@paymentSalesChart');
 
 //Members Controller
 Route::get('/members', 'MembersController@index');
